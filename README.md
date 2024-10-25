@@ -1,6 +1,6 @@
-# Vamos criar o conteúdo do README.md como um arquivo markdown.
+# Projeto Piloto.
 
-readme_content = """
+
 # Mapeamento Interativo do IFCE
 
 Este projeto é um mapeamento interativo do Instituto Federal do Ceará (IFCE), permitindo que os alunos explorem visualmente o campus e obtenham informações sobre áreas específicas ao clicar nos blocos do mapa.
