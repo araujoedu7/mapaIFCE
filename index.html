@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+</head>
+
+<body>
+    <img src="estruturaIfce.svg" usemap="#image-map" id="image">
+
+<map name="image-map">
+    <area alt="block 5" title="block 5" coords="358,554,404,504,512,601,466,650" shape="poly" 
+        onclick="handleSingleClick(event, 'Informações sobre o Bloco 5')" 
+        ondblclick="handleDoubleClick(event, 'https://inkscape.org')">
+        
+    <area alt="block 1" title="block 1" coords="194,366,241,315,344,408,297,459" shape="poly" 
+        onclick="handleSingleClick(event, 'Informações sobre o Bloco 1')" 
+        ondblclick="handleDoubleClick(event, 'https://www.youtube.com/results?search_query=inkscape+tutorials')">
+        
+    <area alt="block 2" title="block 2" coords="344,411,380,442,258,575,226,546,344,411" shape="poly" 
+        onclick="handleSingleClick(event, 'Informações sobre o Bloco 2')" 
+        ondblclick="handleDoubleClick(event, 'https://wiki.inkscape.org/wiki/index.php/Main_Page')">
+        
+    <area alt="block 3" title="block 3" coords="313,540,348,572,311,612,276,580" shape="poly" 
+        onclick="handleSingleClick(event, 'Informações sobre o Bloco 3')" 
+        ondblclick="handleDoubleClick(event, 'https://www.vecteezy.com')">
+        
+    <area alt="block 4" title="block 4" coords="325,599,345,576,417,642,397,663" shape="poly" 
+        onclick="handleSingleClick(event, 'Informações sobre o Bloco 4')" 
+        ondblclick="handleDoubleClick(event, 'https://design.tutsplus.com/categories/vector')">
+        
+    <area alt="block 6" title="block 6" coords="398,666,419,642,448,667,426,691" shape="poly" 
+        onclick="handleSingleClick(event, 'Informações sobre o Bloco 6')" 
+        ondblclick="handleDoubleClick(event, 'https://inkscape.org/forums/')">
+        
+    <area  alt="block 7" title="block 7" coords="286,623,302,605,383,678,368,696" shape="poly" 
+        onclick="handleSingleClick(event, 'Informações sobre o Bloco 7')" 
+        ondblclick="handleDoubleClick(event, 'https://www.freepik.com')">
+        
+    <area alt="block 8" title="block 8" coords="275,582,300,605,265,643,238,622" shape="poly" 
+        onclick="handleSingleClick(event, 'Informações sobre o Bloco 8')" 
+        ondblclick="handleDoubleClick(event, 'https://elements.envato.com/')">
+        
+    <area alt="block 9" title="block 9" coords="265,645,279,633,361,705,346,720" shape="poly" 
+        onclick="handleSingleClick(event, 'Informações sobre o Bloco 9')" 
+        ondblclick="handleDoubleClick(event, 'https://color.adobe.com/create')">
+</map>
+
+<div id="infoBox" style="position: absolute; display: none; padding: 10px; background-color: #f9f9f9; border: 1px solid #ccc;"></div>
+
+<script>
+    function handleSingleClick(event, info) {
+        event.preventDefault();
+        const infoBox = document.getElementById("infoBox");
+        infoBox.innerHTML = info;
+        infoBox.style.display = "block";
+        infoBox.style.left = (event.pageX + 10) + "px";
+        infoBox.style.top = (event.pageY + 10) + "px";
+    }
+
+    function handleDoubleClick(event, url) {
+        event.preventDefault();
+        window.location.href = url;
+    }
+
+    document.addEventListener("click", function(event) {
+        const infoBox = document.getElementById("infoBox");
+        if (infoBox && !event.target.closest("area")) {
+            infoBox.style.display = "none";
+        }
+    });
+</script>
+
+
+</body>
+
+</html>
