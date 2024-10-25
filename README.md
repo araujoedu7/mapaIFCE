@@ -53,9 +53,3 @@ Se deseja contribuir com o projeto, siga os passos abaixo:
 2. Realize as alterações desejadas.
 3. Submeta um Pull Request para revisão.
 """
-
-# Salvando o conteúdo em um arquivo README.md
-with open("/mnt/data/README.md", "w") as file:
-    file.write(readme_content)
-
-"/mnt/data/README.md"
